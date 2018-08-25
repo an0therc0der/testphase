@@ -9,7 +9,7 @@ This code is designed to query an active Windows Registry for key values and art
 investigators may find useful. This code can be used to gather a rudimentary baseline of a 
 registry or to hunt for abnormal keys and values within certain registries on a LIVE system.
 
-Usage: LiveRegistryEnumeration.py [--hive $VAR1] [--wireless $VAR2] [--usb $VAR3] [--shimcache $VAR4]
+Usage: LiveRegistryEnumeration.py [--hive $VAR1] [--wireless] [--usb] [--shimcache]
 
 """
 #Setup the command line arguments and help messages
