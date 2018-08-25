@@ -107,7 +107,6 @@ def readShimCache(daysOfData):
 		adjustedTimes = (high_datetime << 32) | low_datetime
 		#Windows uses January 1, 1601 as start time. Get number of microseconds from then to given number of days ago.
 		timeRange = (timedelta(days=(152539-daysOfData)).total_seconds()) * 1000000
-		#Only add entries from the past 60 days for now.
 		if adjustedTimes / 10 > timeRange:
 			row = [adjustedTimes, path.decode()]
 			entrylist.append(row)
@@ -143,13 +142,9 @@ def main():
 				wirelessNetworks()
 			except PermissionError:
 				print ("You must be admin to check this key.\n")
-		#elif args.wireless.lower() != 'no':
-		  #print ("Unrecongnized Choice for Wireless: \"{}\" is not valid.\n".format(args.wireless))
 		if args.usb:
 			print ("--------------USB DEVICES--------------")
 			usbDevices()
-		#elif args.usb.lower() != "no":
-		  #print ("Unrecongnized Choice for USB: \"{}\" is not valid.\n".format(args.wireless))
 		if args.shimcache is not None:
 			print ("--------------SHIM CACHE DATA--------------")
 			results = readShimCache(args.shimcache)
